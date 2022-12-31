@@ -3,7 +3,6 @@
 #include <cstdint>
 #include <string>
 
-using namespace std;
 class Mem;
 class Chip8 {
   public:
@@ -26,7 +25,7 @@ class Chip8 {
     Chip8();
     ~Chip8();
 
-    bool load_rom(string rom_path);
+    bool load_rom(std::string rom_path);
 
     bool get_draw_flag();
     void set_draw_flag(bool);

@@ -3,8 +3,6 @@
 #include <cstdint>
 #include <string>
 
-using namespace std;
-
 class Mem {
   public:
     uint8_t       ram[4096]{};
@@ -19,7 +17,7 @@ class Mem {
     void    init();
     uint8_t get(uint16_t addr);
     void    set(uint16_t addr, uint8_t data);
-    bool    load_rom(string rom_path);
+    bool    load_rom(std::string rom_path);
     void    set_fontset();
     void    reset();
 };

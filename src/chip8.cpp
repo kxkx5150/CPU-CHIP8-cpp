@@ -6,10 +6,11 @@
 
 Chip8::Chip8()
 {
-    mem         = new Mem();
-    pc          = 0x200;
-    I           = 0;
-    sp          = 0;
+    mem = new Mem();
+    pc  = 0x200;
+    I   = 0;
+    sp  = 0;
+
     sound_timer = 0;
     delay_timer = 0;
 
@@ -23,35 +24,10 @@ Chip8::~Chip8()
 {
     delete mem;
 }
-bool Chip8::load_rom(string rom_path)
+bool Chip8::load_rom(std::string rom_path)
 {
-    // rom_path = "roms/15PUZZLE";
-    // rom_path = "roms/BLINKY";
-    // rom_path = "roms/BLITZ";
-    // rom_path = "roms/BRIX";
-    // rom_path = "roms/CONNECT4";
-    // rom_path = "roms/GUESS";
-    // rom_path = "roms/HIDDEN";
-    // rom_path = "roms/INVADERS";
-    // rom_path = "roms/KALEID";
-    // rom_path = "roms/MAZE";
-    // rom_path = "roms/MERLIN";
-    // rom_path = "roms/MISSILE";
-    // rom_path = "roms/PONG";
-    // rom_path = "roms/PONG2";
-    // rom_path = "roms/PUZZLE";
-    // rom_path = "roms/SYZYGY";
-    // rom_path = "roms/TANK";
-    // rom_path = "roms/TETRIS";
-    // rom_path = "roms/TICTAC";
-    // rom_path = "roms/UFO";
-    // rom_path = "roms/VBRIX";
-    // rom_path = "roms/VERS";
-    // rom_path = "roms/WIPEOFF";
     if (!mem->load_rom(rom_path)) {
-        if (!mem->load_rom("roms/BRIX")) {
-            return false;
-        }
+        return false;
     }
     return true;
 }
